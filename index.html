@@ -6,6 +6,7 @@
 <title>Rental Assistance Program</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,16 +15,17 @@
 }
 
 body{
-    background:#f5f5f5;
+    background:#f4f7fb;
     color:#222;
 }
 
 .hero{
-    background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    background:
+    linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)),
     url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -32,46 +34,85 @@ body{
 }
 
 .content{
-    max-width:700px;
+    max-width:750px;
     color:white;
 }
 
-.content h1{
-    font-size:58px;
+.badge{
+    display:inline-block;
+    background:#ffb100;
+    color:#111;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+    font-size:15px;
+}
+
+h1{
+    font-size:60px;
+    line-height:1.1;
     margin-bottom:20px;
 }
 
-.content p{
-    font-size:22px;
+.subtext{
+    font-size:24px;
     line-height:1.6;
-    margin-bottom:35px;
+    margin-bottom:30px;
+}
+
+.timer-box{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:18px;
+    border-radius:18px;
+    margin-bottom:30px;
+    backdrop-filter:blur(5px);
+}
+
+.timer{
+    font-size:38px;
+    font-weight:bold;
+    color:#ffcc00;
+}
+
+.timer-text{
+    margin-top:8px;
+    font-size:16px;
 }
 
 .btn{
     display:inline-block;
-    background:#1f8bff;
+    background:#1573ff;
     color:white;
     text-decoration:none;
-    padding:18px 45px;
-    border-radius:50px;
-    font-size:22px;
+    padding:20px 50px;
+    border-radius:60px;
+    font-size:24px;
     font-weight:bold;
     transition:0.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .btn:hover{
     transform:scale(1.05);
-    background:#3b9cff;
+    background:#2a84ff;
+}
+
+.small{
+    margin-top:18px;
+    font-size:15px;
+    opacity:0.9;
 }
 
 .section{
-    padding:70px 20px;
-    text-align:center;
+    padding:80px 20px;
 }
 
-.section h2{
+.section-title{
+    text-align:center;
     font-size:42px;
-    margin-bottom:40px;
+    margin-bottom:50px;
 }
 
 .cards{
@@ -83,24 +124,71 @@ body{
 
 .card{
     background:white;
-    width:300px;
-    padding:30px;
+    width:320px;
+    padding:35px;
     border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    text-align:center;
 }
 
 .card h3{
+    color:#1573ff;
     margin-bottom:15px;
-    color:#1f8bff;
+    font-size:24px;
+}
+
+.card p{
+    line-height:1.7;
+    color:#555;
+}
+
+.reviews{
+    background:#eef4ff;
+}
+
+.review-box{
+    background:white;
+    width:340px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+.review-name{
+    font-weight:bold;
+    margin-bottom:10px;
+    color:#1573ff;
 }
 
 footer{
     background:#111;
     color:#aaa;
     text-align:center;
-    padding:25px;
+    padding:30px;
     font-size:14px;
 }
+
+@media(max-width:768px){
+
+h1{
+    font-size:42px;
+}
+
+.subtext{
+    font-size:20px;
+}
+
+.btn{
+    width:100%;
+    font-size:22px;
+}
+
+.timer{
+    font-size:32px;
+}
+
+}
+
 </style>
 </head>
 
@@ -110,16 +198,38 @@ footer{
 
 <div class="content">
 
-<h1>Need Help Paying Rent?</h1>
+<div class="badge">
+LIMITED RENTAL ASSISTANCE AVAILABLE
+</div>
 
-<p>
-You may qualify for rental assistance support programs available in your area.
-Check eligibility and apply online in just a few minutes.
+<h1>
+Check If You Qualify For Rental Assistance Today
+</h1>
+
+<p class="subtext">
+Thousands of residents may qualify for housing and rental support programs.  
+Applications are being reviewed daily.
 </p>
 
+<div class="timer-box">
+
+<div class="timer" id="countdown">
+09:59
+</div>
+
+<div class="timer-text">
+Applications may close soon
+</div>
+
+</div>
+
 <a class="btn" href="https://noklnk.com/x/6010281?subid1=&subid2=&subid3=&subid4=&subid5=&subid6=&subid7=&subid8=&subid9=&subid10=&subid11=&subid12=&subid13=&subid14=&subid15=&subid16=&creative_id=&creative_name=&source_id=&google_aid=&ios_ifa=">
-Check Eligibility
+CHECK ELIGIBILITY
 </a>
+
+<div class="small">
+✔ Secure Online Process • ✔ Takes Less Than 2 Minutes
+</div>
 
 </div>
 
@@ -127,23 +237,70 @@ Check Eligibility
 
 <section class="section">
 
-<h2>Program Benefits</h2>
+<h2 class="section-title">
+Why People Apply
+</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>Fast Online Application</h3>
-<p>Complete your application quickly from your phone or computer.</p>
+<p>
+Complete your application quickly from your phone or computer anytime.
+</p>
 </div>
 
 <div class="card">
-<h3>Monthly Rental Support</h3>
-<p>Find available programs that may help reduce housing costs.</p>
+<h3>Simple Qualification</h3>
+<p>
+Find available assistance programs that may match your situation.
+</p>
 </div>
 
 <div class="card">
-<h3>Simple Qualification Check</h3>
-<p>See if you qualify in only a few easy steps.</p>
+<h3>Secure Process</h3>
+<p>
+Your information is processed securely through an online system.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section reviews">
+
+<h2 class="section-title">
+Recent Applicant Feedback
+</h2>
+
+<div class="cards">
+
+<div class="review-box">
+<div class="review-name">
+Sarah M.
+</div>
+<p>
+“The process was quick and easy. I completed everything from my phone.”
+</p>
+</div>
+
+<div class="review-box">
+<div class="review-name">
+James T.
+</div>
+<p>
+“I checked eligibility in minutes and found available support options.”
+</p>
+</div>
+
+<div class="review-box">
+<div class="review-name">
+Angela R.
+</div>
+<p>
+“Very simple application process and easy to understand.”
+</p>
 </div>
 
 </div>
@@ -151,8 +308,30 @@ Check Eligibility
 </section>
 
 <footer>
-© 2026 Rental Assistance Support
+© 2026 Housing Assistance Support Program
 </footer>
+
+<script>
+
+let time = 600;
+
+setInterval(function(){
+
+let minutes = Math.floor(time / 60);
+let seconds = time % 60;
+
+minutes = minutes < 10 ? "0" + minutes : minutes;
+seconds = seconds < 10 ? "0" + seconds : seconds;
+
+document.getElementById("countdown").innerHTML = minutes + ":" + seconds;
+
+if(time > 0){
+    time--;
+}
+
+},1000);
+
+</script>
 
 </body>
 </html>
